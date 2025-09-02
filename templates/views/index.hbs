@@ -8,14 +8,17 @@
     <body>
         <div class="main-content">
             {{> header }}
-            <p>Use this site to get your weather.</p>
+            <p class="weather-description">Získejte aktuální předpověď počasí pro vaši lokaci</p>
 
             <form>
-                <input placeholder="Location">
-                <button>Search</button>
+                <input placeholder="Zadejte město nebo adresu" id="location-input">
+                <button type="submit">Vyhledat</button>
             </form>
-            <p id="message-1"></p>
-            <p id="message-2"></p>
+            
+            <div class="weather-result" id="weather-result">
+                <p id="message-1"></p>
+                <div id="message-2"></div>
+            </div>
         </div>
         {{> footer}}
 

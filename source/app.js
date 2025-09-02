@@ -68,7 +68,8 @@ app.get('/weather', (req,res) =>{
                 forecast:forecastData.current.condition.text,
                 temperature: forecastData.current.temp_c,
                 location,
-                address:req.query.address
+                address:req.query.address,
+                icon: forecastData.current.condition.icon
             })
         })
     })
