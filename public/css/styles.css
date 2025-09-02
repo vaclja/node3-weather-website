@@ -169,6 +169,7 @@ button:active {
     font-size: 1rem;
     color: #636e72;
     line-height: 1.4;
+    text-align: center;
 }
 
 .error {

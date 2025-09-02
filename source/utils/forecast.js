@@ -1,4 +1,4 @@
-import request from 'postman-request';
+import request from 'postman-request'
 
 const forecast = (latitude, longitude, callback) =>{
     let url = `http://api.weatherapi.com/v1/current.json?key=b6d98d8555bc4780b6e194239252808&q=${encodeURIComponent(latitude)},${encodeURIComponent(longitude)}`;
@@ -11,7 +11,10 @@ const forecast = (latitude, longitude, callback) =>{
             callback(body.error, undefined);
         }
         else{
-            callback(undefined, body);
+            callback(undefined,{ 
+                forecast: `${body.current.condition.text}. Temperature is ${body.current.temp_c} Celsius. Humidity is ${body.current.humidity} percent.`,
+                icon: body.current.condition.icon
+            });
         }
     });
 }

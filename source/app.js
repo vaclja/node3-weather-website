@@ -14,8 +14,6 @@ const publicDirectory = path.join(__dirname, '../public');
 const viewsPath = path.join(__dirname, '../templates/views');
 const templatePath = path.join(__dirname, '../templates/partials');
 
-console.log(publicDirectory);
-
 //init express and set paths
 const app = express();
 const port = process.env.PORT || 3000;
@@ -64,12 +62,12 @@ app.get('/weather', (req,res) =>{
             if(error){
                 return res.send({error});
             }
+            console.log(forecastData);
             res.send({
-                forecast:forecastData.current.condition.text,
-                temperature: forecastData.current.temp_c,
+                forecast: forecastData.forecast,
                 location,
-                address:req.query.address,
-                icon: forecastData.current.condition.icon
+                address: req.query.address,
+                icon: forecastData.icon
             })
         })
     })

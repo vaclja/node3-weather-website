@@ -49,7 +49,6 @@ function showWeather(data) {
                 <img class="weather-icon" src="${data.icon}" alt="${data.forecast || 'weather icon'}" />
                 <div class="weather-text">
                     <div class="forecast">${data.forecast}</div>
-                    <div class="forecast">Teplota: ${data.temperature}</div>
                 </div>
             </div>
         `;
